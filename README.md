@@ -2,7 +2,7 @@
 
 Simulasi jaringan perusahaan dengan kantor pusat di Jakarta dan cabang di Semarang, dihubungkan lewat ISP. Lab ini dibuat di Cisco Packet Tracer 8.2.2 sebagai bagian dari portofolio NOC dan jaringan.
 
-![Topologi jaringan](images/01-topologi.JPEG)
+![Topologi jaringan](images/01-topologi.jpeg)
 
 ## Yang dikerjakan
 
@@ -54,42 +54,42 @@ Pola setiap ACL: izin yang spesifik ditulis lebih dulu, lalu seluruh jaringan in
 ### VLAN di switch Jakarta
 Setiap VLAN berisi port yang sesuai rencana.
 
-![show vlan brief di SW-JKT](images/02-vlan-jkt.JPEG)
+![show vlan brief di SW-JKT](images/02-vlan-jkt.jpeg)
 
 ### Trunk ke router
 Port menuju router membawa semua VLAN.
 
-![show interfaces trunk](images/03-trunk.JPEG)
+![show interfaces trunk](images/03-trunk.jpeg)
 
 ### DHCP dan NAT
 PC di VLAN IT mendapat IP otomatis, dan alamat privat diterjemahkan menjadi 203.0.113.2 saat keluar ke internet.
 
-![DHCP dan NAT](images/04-dhcp-nat.JPEG)
+![DHCP dan NAT](images/04-dhcp-nat.jpeg)
 
 ### OSPF lewat GRE tunnel
 Router Jakarta dan Semarang menjadi tetangga OSPF berstatus FULL, dan saling mempelajari jaringan kantor masing-masing.
 
-![OSPF](images/05-ospf.JPEG)
+![OSPF](images/05-ospf.jpeg)
 
 ### Jalur Semarang ke server Jakarta
 Hasil tracert dari PC Semarang ke server internal menunjukkan paket melewati tunnel antar-kantor.
 
-![Tracert](images/06-tracert.JPEG)
+![Tracert](images/06-tracert.jpeg)
 
 ### DNS dan web
 PC membuka alamat bernama lewat DNS di server internet.
 
-![Web dan DNS](images/07-web-dns.JPEG)
+![Web dan DNS](images/07-web-dns.jpeg)
 
 ### ACL: akses yang diizinkan
 PC Keuangan bisa membuka web server internal, karena port 80 diizinkan.
 
-![ACL berhasil](images/08-acl-berhasil.JPEG)
+![ACL berhasil](images/08-acl-berhasil.jpeg)
 
 ### ACL: akses yang diblokir
 Ping dari PC Keuangan ke server internal dan akses PC Tamu ke intranet ditolak oleh ACL.
 
-![ACL diblokir](images/09-acl-diblokir.JPEG)
+![ACL diblokir](images/09-acl-diblokir.jpeg)
 
 ## Isi repositori
 
