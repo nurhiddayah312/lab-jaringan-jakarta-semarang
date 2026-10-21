@@ -91,6 +91,11 @@ Ping dari PC Keuangan ke server internal dan akses PC Tamu ke intranet ditolak o
 
 ![ACL diblokir](images/09-acl-diblokir.jpeg)
 
+### ACL: bukti jumlah paket
+Hasil `show access-lists` di R-JKT. Angka `match(es)` pada baris `permit` menunjukkan trafik yang diizinkan, sedangkan pada baris `deny` menunjukkan paket yang benar-benar ditahan oleh ACL.
+
+![Hasil show access-lists](images/10-acl-matches.jpeg)
+
 ## Isi repositori
 
 | Lokasi | Isi |
@@ -101,7 +106,7 @@ Ping dari PC Keuangan ke server internal dan akses PC Tamu ke intranet ditolak o
 
 ## Catatan desain
 
-- Trafik antar-kantor dikecualikan dari NAT lewat access list 100, supaya paket menuju kantor lain tidak ikut diterjemahkan.
+- Trafik antar-kantor tidak ikut di-NAT karena lewat interface Tunnel0 yang tidak ditandai sebagai `ip nat outside`. Access list 100 tetap memuat baris deny untuk 192.168.0.0/16 sebagai pengaman tambahan, dan jumlah match-nya nol karena aturan itu memang tidak pernah terpicu.
 - ACL bersifat stateless. Akibatnya, ping dari VLAN IT ke VLAN yang dibatasi gagal karena balasannya ditahan ACL departemen tujuan. Untuk jaringan produksi, ini bisa diganti dengan ACL yang mengenali koneksi (reflexive atau firewall).
 - GRE tidak mengenkripsi trafik. Pengembangan berikutnya adalah menambahkan IPsec di atas tunnel.
 - Rekaman DNS untuk nama intranet ditaruh di server internet demi menyederhanakan lab. Di jaringan nyata, nama internal dilayani oleh DNS internal.
