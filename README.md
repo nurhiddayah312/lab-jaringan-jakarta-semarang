@@ -1,8 +1,9 @@
 # Lab Jaringan Dua Kantor: Jakarta dan Semarang
 
 Simulasi jaringan perusahaan dengan kantor pusat di Jakarta dan cabang di Semarang, dihubungkan lewat ISP. Lab ini dibuat di Cisco Packet Tracer 8.2.2 sebagai bagian dari portofolio NOC dan jaringan.
+Lab ini juga menjadi bagian dari repositori portofolio CCNA: https://github.com/nurhiddayah312/ccna-packet-tracer-labs
 
-## Lab ini juga menjadi bagian dari repositori portofolio CCNA: ccna-packet-tracer-labs
+## Lab ini juga menjadi bagian dari repositori portofolio CCNA: https://github.com/nurhiddayah312/ccna-packet-tracer-labs
 
 ![Topologi jaringan](images/01-topologi.jpeg)
 
